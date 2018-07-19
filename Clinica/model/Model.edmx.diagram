@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71899019bfaf450e8d98327b1fa9aca5" Name="Diagram1">
+        <EntityTypeShape EntityType="clinicaModel.Administrador" Width="1.5" PointX="2.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.CitaMedica" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.Doctor" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.Examen" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.ExamenXFicha" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.FichaMedica" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.Paciente" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.Secretaria" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="clinicaModel.FK__CitaMedic__Docto__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="clinicaModel.FK__CitaMedic__Pacie__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="clinicaModel.FK__CitaMedic__Secre__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="clinicaModel.FK__FichaMedi__Docto__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="clinicaModel.FK__ExamenXFi__Exame__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="clinicaModel.FK__ExamenXFi__Ficha__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="clinicaModel.FK__FichaMedi__Pacie__1CF15040" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

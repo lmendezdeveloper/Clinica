@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="clinicaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="id_Administrador" />
+    </Key>
+    <Property Name="id_Administrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut_Administrador" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="nombre_Administrador" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="apellidos_Administrador" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="clave_Administrador" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="estado_Administrador" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CitaMedica">
+    <Key>
+      <PropertyRef Name="id_CitaMedica" />
+    </Key>
+    <Property Name="id_CitaMedica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaCita_CitaMedica" Type="date" Nullable="false" />
+    <Property Name="fechaSol_CitaMedica" Type="date" Nullable="false" />
+    <Property Name="hora_CitaMedica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="estado_CitaMedica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Paciente_idPaciente_CitaMedica" Type="int" />
+    <Property Name="Doctor_idDoctor_CitaMedica" Type="int" />
+    <Property Name="Secretario_idSecretaria_CitaMedica" Type="int" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="id_Doctor" />
+    </Key>
+    <Property Name="id_Doctor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut_Doctor" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="nombres_Doctor" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="apellidos_Doctor" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="direccion_Doctor" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="nTelefono_Doctor" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="fechaNac_Doctor" Type="date" Nullable="false" />
+    <Property Name="clave_Doctor" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="estado_Doctor" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Examen">
+    <Key>
+      <PropertyRef Name="id_Examen" />
+    </Key>
+    <Property Name="id_Examen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo_Examen" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="descripcion_Examen" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExamenXFicha">
+    <Key>
+      <PropertyRef Name="id_ExamenXFincha" />
+    </Key>
+    <Property Name="id_ExamenXFincha" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estado_ExamenXFicha" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Examen_idExamen_ExamenXFicha" Type="int" />
+    <Property Name="FichaMedica_idFichaMedica_ExamenXFicha" Type="int" />
+  </EntityType>
+  <EntityType Name="FichaMedica">
+    <Key>
+      <PropertyRef Name="id_FichaMedica" />
+    </Key>
+    <Property Name="id_FichaMedica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaConsulta_FichaMedica" Type="date" Nullable="false" />
+    <Property Name="diagnostico_FichaMedica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tratamiento_FichaMedica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="medicamento_FichaMedica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="estado_FichaMedica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Paciente_idPaciente_FichaMedica" Type="int" />
+    <Property Name="Doctor_idDoctor_FichaMedica" Type="int" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="id_Paciente" />
+    </Key>
+    <Property Name="id_Paciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut_Paciente" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="nombres_Paciente" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="apellidos_Paciente" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="fechaNac_Paciente" Type="date" Nullable="false" />
+    <Property Name="nTelefono_Paciente" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="direccion_Paciente" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="clave_Paciente" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="estado_Paciente" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Secretaria">
+    <Key>
+      <PropertyRef Name="id_Secretaria" />
+    </Key>
+    <Property Name="id_Secretaria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rut_Secretaria" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="nombre_Secretaria" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="apellidos_Secretaria" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="direccion_Secretaria" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="nTelefono_Secretaria" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="clave_Secretaria" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="estado_Secretaria" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__CitaMedic__Docto__173876EA">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="CitaMedica" Type="Self.CitaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="id_Doctor" />
+      </Principal>
+      <Dependent Role="CitaMedica">
+        <PropertyRef Name="Doctor_idDoctor_CitaMedica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CitaMedic__Pacie__164452B1">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+    <End Role="CitaMedica" Type="Self.CitaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="id_Paciente" />
+      </Principal>
+      <Dependent Role="CitaMedica">
+        <PropertyRef Name="Paciente_idPaciente_CitaMedica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CitaMedic__Secre__182C9B23">
+    <End Role="Secretaria" Type="Self.Secretaria" Multiplicity="0..1" />
+    <End Role="CitaMedica" Type="Self.CitaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Secretaria">
+        <PropertyRef Name="id_Secretaria" />
+      </Principal>
+      <Dependent Role="CitaMedica">
+        <PropertyRef Name="Secretario_idSecretaria_CitaMedica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ExamenXFi__Exame__267ABA7A">
+    <End Role="Examen" Type="Self.Examen" Multiplicity="0..1" />
+    <End Role="ExamenXFicha" Type="Self.ExamenXFicha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Examen">
+        <PropertyRef Name="id_Examen" />
+      </Principal>
+      <Dependent Role="ExamenXFicha">
+        <PropertyRef Name="Examen_idExamen_ExamenXFicha" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ExamenXFi__Ficha__276EDEB3">
+    <End Role="FichaMedica" Type="Self.FichaMedica" Multiplicity="0..1" />
+    <End Role="ExamenXFicha" Type="Self.ExamenXFicha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaMedica">
+        <PropertyRef Name="id_FichaMedica" />
+      </Principal>
+      <Dependent Role="ExamenXFicha">
+        <PropertyRef Name="FichaMedica_idFichaMedica_ExamenXFicha" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FichaMedi__Docto__1DE57479">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="FichaMedica" Type="Self.FichaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="id_Doctor" />
+      </Principal>
+      <Dependent Role="FichaMedica">
+        <PropertyRef Name="Doctor_idDoctor_FichaMedica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FichaMedi__Pacie__1CF15040">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+    <End Role="FichaMedica" Type="Self.FichaMedica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="id_Paciente" />
+      </Principal>
+      <Dependent Role="FichaMedica">
+        <PropertyRef Name="Paciente_idPaciente_FichaMedica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="clinicaModelStoreContainer">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CitaMedica" EntityType="Self.CitaMedica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Examen" EntityType="Self.Examen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExamenXFicha" EntityType="Self.ExamenXFicha" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FichaMedica" EntityType="Self.FichaMedica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paciente" EntityType="Self.Paciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Secretaria" EntityType="Self.Secretaria" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CitaMedic__Docto__173876EA" Association="Self.FK__CitaMedic__Docto__173876EA">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="CitaMedica" EntitySet="CitaMedica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CitaMedic__Pacie__164452B1" Association="Self.FK__CitaMedic__Pacie__164452B1">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="CitaMedica" EntitySet="CitaMedica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CitaMedic__Secre__182C9B23" Association="Self.FK__CitaMedic__Secre__182C9B23">
+      <End Role="Secretaria" EntitySet="Secretaria" />
+      <End Role="CitaMedica" EntitySet="CitaMedica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ExamenXFi__Exame__267ABA7A" Association="Self.FK__ExamenXFi__Exame__267ABA7A">
+      <End Role="Examen" EntitySet="Examen" />
+      <End Role="ExamenXFicha" EntitySet="ExamenXFicha" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ExamenXFi__Ficha__276EDEB3" Association="Self.FK__ExamenXFi__Ficha__276EDEB3">
+      <End Role="FichaMedica" EntitySet="FichaMedica" />
+      <End Role="ExamenXFicha" EntitySet="ExamenXFicha" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FichaMedi__Docto__1DE57479" Association="Self.FK__FichaMedi__Docto__1DE57479">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="FichaMedica" EntitySet="FichaMedica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FichaMedi__Pacie__1CF15040" Association="Self.FK__FichaMedi__Pacie__1CF15040">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="FichaMedica" EntitySet="FichaMedica" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

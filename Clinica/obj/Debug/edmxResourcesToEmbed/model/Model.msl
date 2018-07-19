@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="clinicaModelStoreContainer" CdmEntityContainer="clinicaEntities1">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="clinicaModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="id_Administrador" ColumnName="id_Administrador" />
+          <ScalarProperty Name="rut_Administrador" ColumnName="rut_Administrador" />
+          <ScalarProperty Name="nombre_Administrador" ColumnName="nombre_Administrador" />
+          <ScalarProperty Name="apellidos_Administrador" ColumnName="apellidos_Administrador" />
+          <ScalarProperty Name="clave_Administrador" ColumnName="clave_Administrador" />
+          <ScalarProperty Name="estado_Administrador" ColumnName="estado_Administrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CitaMedica">
+      <EntityTypeMapping TypeName="clinicaModel.CitaMedica">
+        <MappingFragment StoreEntitySet="CitaMedica">
+          <ScalarProperty Name="id_CitaMedica" ColumnName="id_CitaMedica" />
+          <ScalarProperty Name="fechaCita_CitaMedica" ColumnName="fechaCita_CitaMedica" />
+          <ScalarProperty Name="fechaSol_CitaMedica" ColumnName="fechaSol_CitaMedica" />
+          <ScalarProperty Name="hora_CitaMedica" ColumnName="hora_CitaMedica" />
+          <ScalarProperty Name="estado_CitaMedica" ColumnName="estado_CitaMedica" />
+          <ScalarProperty Name="Paciente_idPaciente_CitaMedica" ColumnName="Paciente_idPaciente_CitaMedica" />
+          <ScalarProperty Name="Doctor_idDoctor_CitaMedica" ColumnName="Doctor_idDoctor_CitaMedica" />
+          <ScalarProperty Name="Secretario_idSecretaria_CitaMedica" ColumnName="Secretario_idSecretaria_CitaMedica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor">
+      <EntityTypeMapping TypeName="clinicaModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="id_Doctor" ColumnName="id_Doctor" />
+          <ScalarProperty Name="rut_Doctor" ColumnName="rut_Doctor" />
+          <ScalarProperty Name="nombres_Doctor" ColumnName="nombres_Doctor" />
+          <ScalarProperty Name="apellidos_Doctor" ColumnName="apellidos_Doctor" />
+          <ScalarProperty Name="direccion_Doctor" ColumnName="direccion_Doctor" />
+          <ScalarProperty Name="nTelefono_Doctor" ColumnName="nTelefono_Doctor" />
+          <ScalarProperty Name="fechaNac_Doctor" ColumnName="fechaNac_Doctor" />
+          <ScalarProperty Name="clave_Doctor" ColumnName="clave_Doctor" />
+          <ScalarProperty Name="estado_Doctor" ColumnName="estado_Doctor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Examen">
+      <EntityTypeMapping TypeName="clinicaModel.Examen">
+        <MappingFragment StoreEntitySet="Examen">
+          <ScalarProperty Name="id_Examen" ColumnName="id_Examen" />
+          <ScalarProperty Name="codigo_Examen" ColumnName="codigo_Examen" />
+          <ScalarProperty Name="descripcion_Examen" ColumnName="descripcion_Examen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExamenXFicha">
+      <EntityTypeMapping TypeName="clinicaModel.ExamenXFicha">
+        <MappingFragment StoreEntitySet="ExamenXFicha">
+          <ScalarProperty Name="id_ExamenXFincha" ColumnName="id_ExamenXFincha" />
+          <ScalarProperty Name="estado_ExamenXFicha" ColumnName="estado_ExamenXFicha" />
+          <ScalarProperty Name="Examen_idExamen_ExamenXFicha" ColumnName="Examen_idExamen_ExamenXFicha" />
+          <ScalarProperty Name="FichaMedica_idFichaMedica_ExamenXFicha" ColumnName="FichaMedica_idFichaMedica_ExamenXFicha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FichaMedica">
+      <EntityTypeMapping TypeName="clinicaModel.FichaMedica">
+        <MappingFragment StoreEntitySet="FichaMedica">
+          <ScalarProperty Name="id_FichaMedica" ColumnName="id_FichaMedica" />
+          <ScalarProperty Name="fechaConsulta_FichaMedica" ColumnName="fechaConsulta_FichaMedica" />
+          <ScalarProperty Name="diagnostico_FichaMedica" ColumnName="diagnostico_FichaMedica" />
+          <ScalarProperty Name="tratamiento_FichaMedica" ColumnName="tratamiento_FichaMedica" />
+          <ScalarProperty Name="medicamento_FichaMedica" ColumnName="medicamento_FichaMedica" />
+          <ScalarProperty Name="estado_FichaMedica" ColumnName="estado_FichaMedica" />
+          <ScalarProperty Name="Paciente_idPaciente_FichaMedica" ColumnName="Paciente_idPaciente_FichaMedica" />
+          <ScalarProperty Name="Doctor_idDoctor_FichaMedica" ColumnName="Doctor_idDoctor_FichaMedica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="clinicaModel.Paciente">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="id_Paciente" ColumnName="id_Paciente" />
+          <ScalarProperty Name="rut_Paciente" ColumnName="rut_Paciente" />
+          <ScalarProperty Name="nombres_Paciente" ColumnName="nombres_Paciente" />
+          <ScalarProperty Name="apellidos_Paciente" ColumnName="apellidos_Paciente" />
+          <ScalarProperty Name="fechaNac_Paciente" ColumnName="fechaNac_Paciente" />
+          <ScalarProperty Name="nTelefono_Paciente" ColumnName="nTelefono_Paciente" />
+          <ScalarProperty Name="direccion_Paciente" ColumnName="direccion_Paciente" />
+          <ScalarProperty Name="clave_Paciente" ColumnName="clave_Paciente" />
+          <ScalarProperty Name="estado_Paciente" ColumnName="estado_Paciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Secretaria">
+      <EntityTypeMapping TypeName="clinicaModel.Secretaria">
+        <MappingFragment StoreEntitySet="Secretaria">
+          <ScalarProperty Name="id_Secretaria" ColumnName="id_Secretaria" />
+          <ScalarProperty Name="rut_Secretaria" ColumnName="rut_Secretaria" />
+          <ScalarProperty Name="nombre_Secretaria" ColumnName="nombre_Secretaria" />
+          <ScalarProperty Name="apellidos_Secretaria" ColumnName="apellidos_Secretaria" />
+          <ScalarProperty Name="direccion_Secretaria" ColumnName="direccion_Secretaria" />
+          <ScalarProperty Name="nTelefono_Secretaria" ColumnName="nTelefono_Secretaria" />
+          <ScalarProperty Name="clave_Secretaria" ColumnName="clave_Secretaria" />
+          <ScalarProperty Name="estado_Secretaria" ColumnName="estado_Secretaria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
