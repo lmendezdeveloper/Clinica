@@ -8,9 +8,9 @@ using System.Web.UI.WebControls;
 using Clinica.controller;
 using Clinica.model;
 
-namespace Clinica.view.secretaria
+namespace Clinica.view.administrador
 {
-    public partial class buscar_pacientes : System.Web.UI.Page
+    public partial class reporte_diario : System.Web.UI.Page
     {
         method metodo = new method();
         cPaciente paciente = new cPaciente();
@@ -18,7 +18,12 @@ namespace Clinica.view.secretaria
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarGridView();
+            if (!IsPostBack)
+            {
+                string fecha = DateTime.Now.Date.ToString();
+                cargarGridView(DateTime.Now.Date);
+                txt_fechaCitado.Text = fecha.Substring(6, 4) + fecha.Substring(2, 3) + "-" + fecha.Substring(0, 2);
+            }
         }
 
         protected void btn_excelClick(object sender, EventArgs e)
@@ -35,7 +40,9 @@ namespace Clinica.view.secretaria
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
 
                 gv_data.AllowPaging = false;
-                this.cargarGridView();
+                DateTime fecha = DateTime.ParseExact(txt_fechaCitado.Text, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
+
+                this.cargarGridView(fecha);
 
                 foreach (TableCell cell in gv_data.HeaderRow.Cells)
                 {
@@ -67,24 +74,32 @@ namespace Clinica.view.secretaria
             }
         }
 
+        protected void onChangeDate(object sender, EventArgs e)
+        {
+            DateTime fecha = DateTime.ParseExact(txt_fechaCitado.Text, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
+
+            cargarGridView(fecha);
+        }
+
         public override void VerifyRenderingInServerForm(Control control)
         {
             return;
         }
 
-        public void cargarGridView()
+        public void cargarGridView(DateTime fecha)
         {
-            var queryTable = from cit in citaMedica.listCitaMedica().GroupBy(cit => cit.Paciente_idPaciente_CitaMedica)
-                              select new
-                              {
-                                  cit.First().Paciente.rut_Paciente,
-                                  cit.First().Paciente.nombres_Paciente,
-                                  cit.First().Paciente.apellidos_Paciente,
-                                  cit.First().Paciente.fechaNac_Paciente,
-                                  cit.First().Paciente.nTelefono_Paciente,
-                                  cit.First().Paciente.direccion_Paciente,
-                                  count = cit.Count()
-                              };
+            var queryTable = from cit in citaMedica.listCitaMedica()
+                             where cit.fechaCita_CitaMedica == fecha
+                             select new
+                             {
+                                 cit.fechaSol_CitaMedica,
+                                 cit.fechaCita_CitaMedica,
+                                 cit.hora_CitaMedica,
+                                 cit.estado_CitaMedica,
+                                 nPaciente = cit.Paciente.nombres_Paciente + " " + cit.Paciente.apellidos_Paciente,
+                                 nDoctor = cit.Doctor.nombres_Doctor + " " + cit.Doctor.apellidos_Doctor,
+                                 nSecretaria = cit.Secretaria.nombre_Secretaria + " " + cit.Secretaria.apellidos_Secretaria
+                             };
 
             gv_data.DataSource = queryTable;
             gv_data.DataBind();

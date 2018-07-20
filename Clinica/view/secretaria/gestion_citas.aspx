@@ -58,7 +58,7 @@
                                 <asp:BoundField DataField="nombres_Doctor" HeaderText="Doctor(a)" />
                                 <asp:BoundField DataField="nombres_Paciente" HeaderText="Paciente" />
                                 <asp:BoundField DataField="estado_CitaMedica" HeaderText="Estado" />
-                                <asp:ButtonField CommandName="btnEdit" runat="server" Text="Editar" ControlStyle-CssClass="btn btn-sm btn-info" />
+                                <asp:ButtonField CommandName="btnEdit" runat="server" Text="Activar" ControlStyle-CssClass="btn btn-sm btn-info" />
                                 <asp:ButtonField CommandName="btnAbort" runat="server" Text="Anular" ControlStyle-CssClass="btn btn-sm btn-danger" />
                             </Columns>
                         </asp:GridView>

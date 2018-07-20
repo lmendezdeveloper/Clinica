@@ -7,10 +7,19 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Clinica.view.doctor {
+namespace Clinica.view.administrador {
     
     
-    public partial class mis_pacientes {
+    public partial class reporte_diario {
+        
+        /// <summary>
+        /// Control txt_fechaCitado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_fechaCitado;
         
         /// <summary>
         /// Control lbl_red.

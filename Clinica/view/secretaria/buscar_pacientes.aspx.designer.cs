@@ -13,24 +13,6 @@ namespace Clinica.view.secretaria {
     public partial class buscar_pacientes {
         
         /// <summary>
-        /// Control txt_rut.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_rut;
-        
-        /// <summary>
-        /// Control txt_nombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nombre;
-        
-        /// <summary>
         /// Control lbl_red.
         /// </summary>
         /// <remarks>

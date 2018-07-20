@@ -10,7 +10,25 @@
 namespace Clinica.view.doctor {
     
     
-    public partial class mis_pacientes {
+    public partial class historial_clinico {
+        
+        /// <summary>
+        /// Control txt_rut.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_rut;
+        
+        /// <summary>
+        /// Control btn_buscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_buscar;
         
         /// <summary>
         /// Control lbl_red.

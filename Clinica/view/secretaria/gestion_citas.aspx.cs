@@ -100,26 +100,37 @@ namespace Clinica.view.secretaria
             int fila = Convert.ToInt32(e.CommandArgument);
             if (e.CommandName == "btnEdit")
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#modal_editar').modal('show');</script>", false);
-                /*
-                txt_fechaAtencion.Text = gv_citas.Rows[fila].Cells[3].Text;
-                txt_horaAtencion.Text = gv_citas.Rows[fila].Cells[4].Text;
-                dp_doctor.Text = 1.ToString();
-                
-                btn_edit.Visible = true;
-                btn_add.Visible = false;
+                CitaMedica cit = new CitaMedica();
 
-                /*
-                txtId.Text = gvUsuario.Rows[fila].Cells[0].Text;
-                txtRut.Text = gvUsuario.Rows[fila].Cells[1].Text;
-                txtNombre.Text = gvUsuario.Rows[fila].Cells[2].Text;
-                txtApellido.Text = gvUsuario.Rows[fila].Cells[3].Text;
-                txtClave.Text = gvUsuario.Rows[fila].Cells[4].Text;
-                dpXargo.Text = gvUsuario.Rows[fila].Cells[5].Text;
-                btnEditar.Visible = true;
-                btnAgregar.Visible = false;
-                //Response.Write("<script>window.alert('La fila es: "+fila+"')</script>");
-                */
+                var queryCitaMedica = from c in citaMedica.listCitaMedica()
+                                      select c;
+                foreach (var item in queryCitaMedica)
+                {
+                    if (item.id_CitaMedica == Int32.Parse(gv_citas.Rows[fila].Cells[0].Text))
+                    {
+                        cit.id_CitaMedica = item.id_CitaMedica;
+                        cit.fechaCita_CitaMedica = item.fechaCita_CitaMedica;
+                        cit.fechaSol_CitaMedica = item.fechaSol_CitaMedica;
+                        cit.hora_CitaMedica = item.hora_CitaMedica;
+                        cit.estado_CitaMedica = "Activa";
+                        cit.Paciente_idPaciente_CitaMedica = item.Paciente_idPaciente_CitaMedica;
+                        cit.Doctor_idDoctor_CitaMedica = item.Doctor_idDoctor_CitaMedica;
+                        cit.Secretario_idSecretaria_CitaMedica = item.Secretario_idSecretaria_CitaMedica;
+                    }
+                }
+
+                if (citaMedica.EditCitaMedica(cit))
+                {
+                    lbl_red.Text = "";
+                    lbl_green.Text = "Cita anulada con exito";
+                    cargarGridView();
+                }
+                else
+                {
+                    lbl_red.Text = "No se ha podido anular la cita";
+                    lbl_green.Text = "";
+                    cargarGridView();
+                }
             }
 
             if (e.CommandName == "btnAbort")

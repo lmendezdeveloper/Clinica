@@ -7,10 +7,28 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Clinica.view.doctor {
+namespace Clinica.view.administrador {
     
     
-    public partial class mis_pacientes {
+    public partial class atenciones_doctor {
+        
+        /// <summary>
+        /// Control dp_doctor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dp_doctor;
+        
+        /// <summary>
+        /// Control btn_add.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_add;
         
         /// <summary>
         /// Control lbl_red.

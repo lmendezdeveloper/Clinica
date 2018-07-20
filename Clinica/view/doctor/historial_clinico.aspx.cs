@@ -8,17 +8,23 @@ using System.Web.UI.WebControls;
 using Clinica.controller;
 using Clinica.model;
 
-namespace Clinica.view.secretaria
+namespace Clinica.view.doctor
 {
-    public partial class buscar_pacientes : System.Web.UI.Page
+    public partial class historial_clinico : System.Web.UI.Page
     {
         method metodo = new method();
         cPaciente paciente = new cPaciente();
         cCitaMedica citaMedica = new cCitaMedica();
+        cFichaMedica fichaMedica = new cFichaMedica();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarGridView();
+            cargarGridView(null);
+        }
+
+        protected void btn_buscarClick(object sender, EventArgs e)
+        {
+            cargarGridView(txt_rut.Text);
         }
 
         protected void btn_excelClick(object sender, EventArgs e)
@@ -35,7 +41,7 @@ namespace Clinica.view.secretaria
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
 
                 gv_data.AllowPaging = false;
-                this.cargarGridView();
+                this.cargarGridView(txt_rut.Text);
 
                 foreach (TableCell cell in gv_data.HeaderRow.Cells)
                 {
@@ -72,21 +78,20 @@ namespace Clinica.view.secretaria
             return;
         }
 
-        public void cargarGridView()
+        public void cargarGridView(string rut)
         {
-            var queryTable = from cit in citaMedica.listCitaMedica().GroupBy(cit => cit.Paciente_idPaciente_CitaMedica)
-                              select new
-                              {
-                                  cit.First().Paciente.rut_Paciente,
-                                  cit.First().Paciente.nombres_Paciente,
-                                  cit.First().Paciente.apellidos_Paciente,
-                                  cit.First().Paciente.fechaNac_Paciente,
-                                  cit.First().Paciente.nTelefono_Paciente,
-                                  cit.First().Paciente.direccion_Paciente,
-                                  count = cit.Count()
-                              };
-
-            gv_data.DataSource = queryTable;
+            var queryTable = from fc in fichaMedica.listFichaMedica()
+                             where fc.Paciente.rut_Paciente == rut
+                             select new
+                             {
+                                 fc.fechaConsulta_FichaMedica,
+                                 nombre_doctor = fc.Doctor.nombres_Doctor + " " + fc.Doctor.apellidos_Doctor,
+                                 fc.diagnostico_FichaMedica,
+                                 fc.tratamiento_FichaMedica,
+                                 fc.medicamento_FichaMedica
+                             };
+            
+            gv_data.DataSource = queryTable.ToList();
             gv_data.DataBind();
         }
     }

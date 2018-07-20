@@ -34,6 +34,7 @@
                         <asp:TextBox ID="txt_pass" runat="server" TextMode="Password" placeholder="Contraseña" CssClass="form-control"></asp:TextBox>
                         <br />
                         <asp:Button ID="btn_ingresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="btn-lg btn-primary btn-block" />
+                        <asp:Label ID="lbl_red" runat="server" CssClass="text-danger"></asp:Label>                        
                         <br />
                         <span class="mt-5 mb-3 text-muted">&copy; Luis Méndez - Rodrigo Manriquez</span>
                     </p>

@@ -10,19 +10,7 @@
                     <div class="card-body">
                         <div class="form-row">
                             <div class="col-12">
-                                <h3 class="card-title">Mis Pacientes</h3>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-2">
-                                <br>
-                                <asp:label text="Rut: " runat="server" />
-                                <asp:textbox id="txt_rut" runat="server" placeholder="12345678-9" cssclass="form-control"></asp:textbox>
-                            </div>
-                            <div class="col-md-4">
-                                <br>
-                                <asp:label text="Nombres: " runat="server" />
-                                <asp:textbox id="txt_nombre" runat="server" placeholder="Nicolás Ignacio" cssclass="form-control"></asp:textbox>
+                                <h3 class="card-title">Pacientes por atenciones</h3>
                             </div>
                         </div>
                         <br>
@@ -40,6 +28,7 @@
                                 <asp:BoundField DataField="fechaNac_Paciente" HeaderText="Fecha Nac." DataFormatString="{0:d}" />
                                 <asp:BoundField DataField="nTelefono_Paciente" HeaderText="Telefono" />
                                 <asp:BoundField DataField="direccion_Paciente" HeaderText="Dirección" />
+                                <asp:BoundField DataField="count" HeaderText="Nª Atenciones" />
                             </Columns>
                         </asp:gridview>
                         <div class="form-row">

@@ -10,6 +10,7 @@ namespace Clinica.view
 {
     public partial class login : System.Web.UI.Page
     {
+        method metodo = new method();
         cPaciente paciente = new cPaciente();
         cSecretaria secretaria = new cSecretaria();
         cDoctor doctor = new cDoctor();
@@ -17,7 +18,10 @@ namespace Clinica.view
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Session.Abandon();
+            }
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -26,9 +30,9 @@ namespace Clinica.view
 
             if (txt_user.Text == "" || txt_pass.Text == "")
             {
-                Response.Write("<script>window.alert('Debe llenar todos los campos')</script>");
+                lbl_red.Text = "Debe llenar todos los campos";
             }
-            else
+            else if (metodo.validarRut(txt_user.Text) == true)
             {
                 if (perfil == 1)
                 {
@@ -40,14 +44,14 @@ namespace Clinica.view
                         foreach (var item in query.ToList())
                         {
                             Session["idUsuario"] = item.id_Paciente.ToString();
-                            Session["nombreUsuario"] = item.nombres_Paciente.ToString()+" "+item.apellidos_Paciente.ToString();
+                            Session["nombreUsuario"] = item.nombres_Paciente.ToString() + " " + item.apellidos_Paciente.ToString();
                             Session["perfilUsuario"] = 1.ToString();
                             Response.Redirect("paciente/inicio.aspx");
                         }
                     }
                     else
                     {
-                        Response.Write("<script>window.alert('Usuario o contraseña incorrectos')</script>");
+                        lbl_red.Text = "Usuario o contraseña incorrectos";
                     }
                 }
                 else if (perfil == 2)
@@ -67,7 +71,7 @@ namespace Clinica.view
                     }
                     else
                     {
-                        Response.Write("<script>window.alert('Usuario o contraseña incorrectos')</script>");
+                        lbl_red.Text = "Usuario o contraseña incorrectos";
                     }
                 }
                 else if (perfil == 3)
@@ -87,7 +91,7 @@ namespace Clinica.view
                     }
                     else
                     {
-                        Response.Write("<script>window.alert('Usuario o contraseña incorrectos')</script>");
+                        lbl_red.Text = "Usuario o contraseña incorrectos";
                     }
                 }
                 else
@@ -107,9 +111,13 @@ namespace Clinica.view
                     }
                     else
                     {
-                        Response.Write("<script>window.alert('Usuario o contraseña incorrectos')</script>");
+                        lbl_red.Text = "Usuario o contraseña incorrectos";
                     }
                 }
+            }
+            else
+            {
+                lbl_red.Text = "Rut invalido";
             }
         }
     }

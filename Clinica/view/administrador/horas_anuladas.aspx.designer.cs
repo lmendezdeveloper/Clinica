@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Clinica.view.doctor {
+namespace Clinica.view.administrador {
     
     
-    public partial class mis_pacientes {
+    public partial class horas_anuladas {
         
         /// <summary>
         /// Control lbl_red.
