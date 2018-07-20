@@ -22,7 +22,7 @@ namespace Clinica.view.secretaria
 
         protected void btn_addClick(object sender, EventArgs e)
         {
-            if (txt_rut.Text == "" || txt_nombre.Text == "" || txt_apellido.Text == "" || txt_fechanacimiento.Text == "" || txt_telefono.Text == "" || txt_direccion.Text == "")
+            if (txt_rut.Text == "" || txt_nombre.Text == "" || txt_apellido.Text == "" || txt_fecha.Text == "" || txt_telefono.Text == "" || txt_direccion.Text == "")
             {
                 lbl_green.Text = "";
                 lbl_red.Text = "Debe llenar todos los campos";
@@ -42,21 +42,22 @@ namespace Clinica.view.secretaria
                 }
                 if (id_paciente == null)
                 {
-                    string nombre = txt_nombre.Text;
+                    string nombres = txt_nombre.Text;
                     string apellidos = txt_apellido.Text;
-                    DateTime fechaCita = DateTime.ParseExact(txt_fechanacimiento.Text, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                    DateTime fecha_nacimiento = DateTime.ParseExact(txt_fecha.Text, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                     string telefono = txt_telefono.Text;
                     string direccion = txt_direccion.Text;
-                    string estado = "Activo";
+                    string clave = "123";
+                    string estado = dp_estado.Text;
 
                     Paciente pac = new Paciente();
                     pac.rut_Paciente = rut;
-                    pac.nombres_Paciente = nombre;
+                    pac.nombres_Paciente = nombres;
                     pac.apellidos_Paciente = apellidos;
-                    pac.fechaNac_Paciente = fechaCita;
+                    pac.fechaNac_Paciente = fecha_nacimiento;
                     pac.nTelefono_Paciente = telefono;
                     pac.direccion_Paciente = direccion;
-                    pac.clave_Paciente = "123";
+                    pac.clave_Paciente = clave;
                     pac.estado_Paciente = estado;
 
                     if (paciente.addPaciente(pac))
@@ -64,9 +65,10 @@ namespace Clinica.view.secretaria
                         txt_rut.Text = "";
                         txt_nombre.Text = "";
                         txt_apellido.Text = "";
-                        txt_fechanacimiento.Text = "";
+                        txt_fecha.Text = "";
                         txt_telefono.Text = "";
                         txt_direccion.Text = "";
+                        dp_estado.SelectedValue = "Activo";
                         lbl_red.Text = "";
                         lbl_green.Text = "Paciente agendado con exito";
                         cargarGridView();
@@ -74,13 +76,13 @@ namespace Clinica.view.secretaria
                     else
                     {
                         lbl_green.Text = "";
-                        lbl_red.Text = "No se ha podido agregar al paciente";
+                        lbl_red.Text = "No se ha podido agregar la cita";
                     }
                 }
                 else
                 {
                     lbl_green.Text = "";
-                    lbl_red.Text = "Paciente ya registrado";
+                    lbl_red.Text = "Rut registrado";
                 }
             }
             else
@@ -94,8 +96,9 @@ namespace Clinica.view.secretaria
         {
             var queryTable = from pac in paciente.listPaciente()
                              select pac;
-            gv_pacientes.DataSource = queryTable.ToList();
-            gv_pacientes.DataBind();
+
+            gv_data.DataSource = queryTable.ToList();
+            gv_data.DataBind();
         }
     }
 }

@@ -7,91 +7,55 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Clinica.view.secretaria {
+namespace Clinica.view.doctor {
     
     
-    public partial class gestion_pacientes {
+    public partial class ficha_virtual {
         
         /// <summary>
-        /// Control txt_rut.
+        /// Control txt_fechaCitado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_rut;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechaCitado;
         
         /// <summary>
-        /// Control txt_nombre.
+        /// Control dp_citado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nombre;
+        protected global::System.Web.UI.WebControls.DropDownList dp_citado;
         
         /// <summary>
-        /// Control txt_apellido.
+        /// Control txt_diagnostico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_apellido;
+        protected global::System.Web.UI.WebControls.TextBox txt_diagnostico;
         
         /// <summary>
-        /// Control dp_estado.
+        /// Control txt_tratamiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_estado;
+        protected global::System.Web.UI.WebControls.TextBox txt_tratamiento;
         
         /// <summary>
-        /// Control txt_fecha.
+        /// Control txt_medicamento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fecha;
-        
-        /// <summary>
-        /// Control txt_telefono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_telefono;
-        
-        /// <summary>
-        /// Control txt_direccion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_direccion;
-        
-        /// <summary>
-        /// Control btn_add.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add;
-        
-        /// <summary>
-        /// Control lbl_red.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_red;
+        protected global::System.Web.UI.WebControls.TextBox txt_medicamento;
         
         /// <summary>
         /// Control lbl_green.
@@ -103,12 +67,12 @@ namespace Clinica.view.secretaria {
         protected global::System.Web.UI.WebControls.Label lbl_green;
         
         /// <summary>
-        /// Control gv_data.
+        /// Control btn_add.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_data;
+        protected global::System.Web.UI.WebControls.Button btn_add;
     }
 }

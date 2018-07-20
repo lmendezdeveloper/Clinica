@@ -46,7 +46,6 @@ namespace Clinica.controller
                 Edit.clave_Paciente = pac.clave_Paciente;
                 Edit.estado_Paciente = pac.estado_Paciente;
 
-                context.SaveChanges();
                 return context.SaveChanges() > 0;
 
             }
@@ -62,6 +61,7 @@ namespace Clinica.controller
             {
                 Paciente Delete = context.Paciente.Find(id_Paciente);
                 context.Paciente.Remove(Delete);
+
                 return context.SaveChanges() > 0;
             }
             catch (Exception)

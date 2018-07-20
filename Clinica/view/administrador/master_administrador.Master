@@ -22,31 +22,23 @@
 <body class="master-body">
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-            <a class="navbar-brand" href="inicio.aspx"><i class="fas fa-hospital-alt" style="margin-bottom: 6px; margin-top: 0px;"></i>&nbsp;MiClinica</a>
+            <a class="navbar-brand active" href="inicio.aspx"><i class="fas fa-hospital-alt" style="margin-bottom: 6px; margin-top: 0px;"></i>&nbsp;MiClinica</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mantenedoes</a>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mantenedores</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Pacientes</a>
-                            <a class="dropdown-item" href="#">Secretarias</a>
-                            <a class="dropdown-item" href="#">Doctores</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Administradores</a>
+                            <a class="dropdown-item" href="pacientes.aspx">Pacientes</a>
+                            <a class="dropdown-item" href="secretaria.aspx">Secretarias</a>
+                            <a class="dropdown-item" href="doctor.aspx">Doctores</a>
                         </div>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="gestion_pacientes.aspx">Gestión Pacientes<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="gestion_citas.aspx">Gestión Citas Médicas<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt" style="margin-bottom: 3px; margin-top: 0px;"></i>&nbsp;Cerrar Sesión<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../login.aspx"><i class="fas fa-sign-out-alt" style="margin-bottom: 3px; margin-top: 0px;"></i>&nbsp;Cerrar Sesión<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>

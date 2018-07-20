@@ -67,46 +67,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal Editar -->
-    <div class="modal fade bd-example-modal-lg" id="modal_editar" tabindex="-1" role="dialog" aria-labelledby="modal_editar" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 1250px;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">AGREGAR DETALLE PARA SUBVENCIÓN BASE, ART 9 DFL 2/98 + LEY 19.933</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <output id="id_registo_detalle" style="display: none" />
-                    <div class="form-row">
-                        <div class="col-8">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">SUBVENCIÓN BASE, ART 9 DFL 2/98</span>
-                                </div>
-                                <input id="monto_a" name="monto_a" type="number" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-8">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">LEY 19.933&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-                                </div>
-                                <input id="monto_b" name="monto_b" type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-1">
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-primary btn-block">Agregar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </asp:Content>

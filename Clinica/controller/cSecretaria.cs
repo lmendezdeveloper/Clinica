@@ -45,9 +45,7 @@ namespace Clinica.controller
                 Edit.clave_Secretaria = sec.clave_Secretaria;
                 Edit.estado_Secretaria = sec.estado_Secretaria;
 
-                context.SaveChanges();
                 return context.SaveChanges() > 0;
-
             }
             catch (Exception)
             {

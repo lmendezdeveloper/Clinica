@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Clinica.view.secretaria {
+namespace Clinica.view.administrador {
     
     
-    public partial class gestion_pacientes {
+    public partial class secretaria {
         
         /// <summary>
         /// Control txt_rut.
@@ -49,15 +49,6 @@ namespace Clinica.view.secretaria {
         protected global::System.Web.UI.WebControls.DropDownList dp_estado;
         
         /// <summary>
-        /// Control txt_fecha.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fecha;
-        
-        /// <summary>
         /// Control txt_telefono.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace Clinica.view.secretaria {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_direccion;
+        
+        /// <summary>
+        /// Control btn_edit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_edit;
         
         /// <summary>
         /// Control btn_add.
@@ -110,5 +110,14 @@ namespace Clinica.view.secretaria {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gv_data;
+        
+        /// <summary>
+        /// Control btn_excel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_excel;
     }
 }

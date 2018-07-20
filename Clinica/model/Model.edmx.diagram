@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="clinicaModel.Doctor" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="clinicaModel.Examen" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="clinicaModel.ExamenXFicha" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="clinicaModel.FichaMedica" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="clinicaModel.FichaMedica" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="clinicaModel.Paciente" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="clinicaModel.Secretaria" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="clinicaModel.FK__CitaMedic__Docto__173876EA" ManuallyRouted="false" />
